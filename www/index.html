@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
+    <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    <script src="xhr.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <!--      
+      You may substitute jQuery for the App Framework selector library.
+      See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery
+    -->
+    <script type="application/javascript" src="app_framework/2.1/appframework.js"></script>
+    <script type="application/javascript" src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
+    <!--      
+      You may substitute jQuery for the App Framework selector library.
+      See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery
+    -->
+    <script type="application/javascript" src="lib/jquery.min.js"></script>
+    <script type="application/javascript" src="sidebar/js/hammer.js"></script>
+    <script type="application/javascript" src="sidebar/js/jquery.hammer.js"></script>
+    <script type="application/javascript" src="sidebar/js/swipe-hammer.js"></script>
+    <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
+    <script type="application/javascript" src="js/index_user_scripts.js"></script>
+    <script type="application/javascript" src="xdk/ad/af_subpage.js"></script>
+    <script type="application/javascript" src="app_framework/themeRelease.js"></script>
+    <script>
+        $.ui.useOSThemes=false;  
+    </script>
+  </head>
+
+  <body id="afui" class="af">
+    <!--- INICIO INICIO --->  
+    <header class="wrapping-col wrap-element uib_w_1" data-uib="app_framework/header" data-ver="2" id="af-header-4">
+      <h1></h1><a class="button widget uib_w_2 header-right d-margins" data-uib="app_framework/button" data-ver="1">Menu</a>
+    </header>
+    <div class="uwrap" id="content">
+      <div class="upage panel" id="inicio" data-header="af-header-4" data-footer="af-footer-0">
+        <div class="upage-outer">
+            
+          <!--- INICIO MENU --->
+          <div class="inner-element uib_w_3 uib_sidebar leftbar bar-bg thumb-bg bar-gutter" data-uib="layout/left_sidebar" data-ver="1" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'dur':200, 'io':true}">
+            <div class="sidebar-content content-area vertical-col">
+
+              <ul class="list widget uib_w_4 d-margins" data-uib="app_framework/listview" data-ver="1">
+                <li class="widget uib_w_5" data-uib="app_framework/listitem" data-ver="1"><a class="icon home">Inicio</a>
+                </li>
+              </ul>
+              <ul class="list widget uib_w_6 d-margins" data-uib="app_framework/listview" data-ver="1">
+                <li class="widget uib_w_7" data-uib="app_framework/listitem" data-ver="1"><a class="icon graph">Ranking</a>
+                </li>
+              </ul>
+              <ul class="list widget uib_w_8 d-margins" data-uib="app_framework/listview" data-ver="1">
+                <li class="widget uib_w_9" data-uib="app_framework/listitem" data-ver="1"><a class="icon picture">Museus</a>
+                </li>
+              </ul>
+              <ul class="list widget uib_w_10 d-margins" data-uib="app_framework/listview" data-ver="1">
+                <li class="widget uib_w_11" data-uib="app_framework/listitem" data-ver="1"><a class="icon location">Mapa</a>
+                </li>
+              </ul>
+              <ul class="list widget uib_w_18 d-margins" data-uib="app_framework/listview" data-ver="1">
+                <li class="widget uib_w_19" data-uib="app_framework/listitem" data-ver="1"><a class="icon tv">Holograma</a>
+                </li>
+              </ul>
+              <ul class="list widget uib_w_12 d-margins" data-uib="app_framework/listview" data-ver="1">
+                <li class="widget uib_w_13" data-uib="app_framework/listitem" data-ver="1"><a class="icon star">Promocoes</a>
+                </li>
+              </ul>
+              <ul class="list widget uib_w_14 d-margins" data-uib="app_framework/listview" data-ver="1">
+                <li class="widget uib_w_15" data-uib="app_framework/listitem" data-ver="1"><a class="icon mail">SAC</a>
+                </li>
+              </ul>
+              <ul class="list widget uib_w_16 d-margins" data-uib="app_framework/listview" data-ver="1">
+                <li class="widget uib_w_17" data-uib="app_framework/listitem" data-ver="1"><a href="sair.php" class="icon close">Sair</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--- FIM MENU --->
+            
+          <iframe src="noticias.html"></iframe>
+    <!--- FIM INICIO --->    
+            
+          <!--- INICIO RANKING --->
+          <div id="Ranking" class="upage-content vertical-col left hidden">
+            <iframe src="ranking.php"></iframe>
+          </div>
+          <!--- FIM RANKING --->
+            
+              
+          <div id="museus" class="upage-content vertical-col left hidden"></div>
+
+          <!--- MAPA --->
+          <div id="mapa" class="upage-content vertical-col left hidden">
+            <iframe src="mapa.html"></iframe>
+          </div>
+          <!--- FIM MAPA -->
+
+          <!--- INICIO PROMO --->
+          <div id="promocoes" class="upage-content vertical-col left hidden">
+            <iframe src="promocoes.html"></iframe>
+          </div>
+          <!--- FIM PROMO --->
+
+          <!--- INICIO SAC --->
+          <div id="sac" class="upage-content vertical-col left hidden">
+            <form id="frmSac" method="post" action="sac.php">
+              <label for="nome">Nome:</label>
+              <input type="text" name="nome" id="nome" required="">
+              <br>
+
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" required="">
+              <br>
+
+              <label for="sugestao">Sugestão</label>
+              <textarea name="sugestao" id="sugestao"></textarea>
+
+              <button type="submit" name="botao" value="Enviar">Enviar</button>
+            </form>
+          </div>
+          <!--- FIM SAC --->
+
+          <!--- HOLOGRAMA --->
+          <div id="holograma" class="upage-content vertical-col left hidden">
+            <form action="configled2.php" method="get">
+              <input type="submit" name="holostatus" value="Liga">
+              <input type="submit" name="holostatus" value="Desliga">
+            </form>
+          </div>
+          <!--- FIM HOLOGRAMA--->
+            
+        </div>
+
+      </div>
+    </div>
+    <footer class="wrap-element uib_w_20" data-uib="app_framework/footer" data-ver="1" id="af-footer-0">
+      <a class="widget uib_w_21 d-margins" data-uib="app_framework/button" data-ver="1">ESCANEAR</a>
+    </footer>
+  </body>
+
+</html>

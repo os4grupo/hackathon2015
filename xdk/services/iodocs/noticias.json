@@ -1,0 +1,5 @@
+{
+GET /search/?q=string&sort=[relevance|date]&match=[all|any|phrase]&page=[integer]&limit=[integer]&format=[xml|rss|json]
+Host: api.destakes.com
+
+}

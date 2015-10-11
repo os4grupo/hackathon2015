@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        	<script>document.documentElement.className = 'js';</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5">
+	<!-- Force latest IE rendering engine & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- Make IE recognise HTML5 elements for styling -->
+	<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	
+	<link rel="stylesheet" type="text/css" href="http://stephband.info/css/template.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://stephband.info/css/template.theme.min.css" />
+	
+	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/css/site.layout.css" />
+	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/css/docs.classes.css" />
+	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/css/site.highlight.light.css" />	
+	<style>
+        background: #e1e1e1;
+		.site_wrap > .slides_wrap {
+			margin-bottom: 1em;
+			margin-left: -8px;
+			margin-right: -8px;
+		}
+
+		.img_slides_wrap {
+			width: 784px;
+			border: 8px solid #333333;
+			background-color: #444444;
+			overflow: hidden;
+		}
+
+		.img_slide {
+			padding: 0;
+		}
+
+		.js .img_slide {
+			/* Overide template's height transitions. */
+			width: 100%;
+			height: auto;
+		}
+
+		.slide_buttons_index {
+			text-align: center;
+		}
+
+		.notransition,
+		.notransition .slide {
+			-webkit-transition-duration: 0 !important;
+			   -moz-transition-duration: 0 !important;
+			    -ms-transition-duration: 0 !important;
+			        transition-duration: 0 !important;
+		
+			-webkit-transition-delay: 0 !important;
+			   -moz-transition-delay: 0 !important;
+			    -ms-transition-delay: 0 !important;
+			        transition-delay: 0 !important;
+		}
+
+		@media screen and (max-width: 640px) {
+			.img_slides_wrap {
+				width: 100%;
+
+				-webkit-box-sizing: content-box;
+				   -moz-box-sizing: content-box;
+				    -ms-box-sizing: content-box;
+				        box-sizing: content-box;
+			}
+		}
+	</style>
+        <link rel="stylesheet" type="text/css" href="galleria/galleria.classic.css">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <style>
+            @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        </style>
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+        <script src="cordova.js" id="xdkJScordova_"></script>
+        <script src="js/app.js"></script>
+        <script src="js/init-app.js"></script>
+        <script src="xdk/init-dev.js"></script>
+        <script type="application/javascript" src="app_framework/2.1/appframework.js"></script>
+        <script type="application/javascript" src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria-1.3.6.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria.classic.min.js"></script>
+        <script type="application/javascript" src="galleria/galleria-startup.js"></script>
+
+    </head>
+
+    <body id="main">
+        
+<div class="site_wrap wrap">
+	
+		<div class="img_slides_wrap slides_wrap wrap">
+			<img height="480px"class="img_slide slide active" id="slide1" src="gallery_images/tutorial 1 página.jpg"
+			/><img class="img_slide slide" id="slide2" src="gallery_images/TUTORIAL PAGINA 2.jpg"
+			/><img class="img_slide slide" id="slide3" src="gallery_images/TUTORIAL PAGINA 3.jpg"
+			/><img class="img_slide slide" id="slide4" src="gallery_images/TUTORIAL PAGINA 4.jpg" />
+            <img class="img_slide slide" id="slide5" src="gallery_images/TUTORIAL PAGINA 5.jpg" />
+		</div>
+
+
+    
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+	<script src="http://stephband.info/jquery.event.move/js/jquery.event.move.js"></script>
+	<script src="js/jquery.event.swipe.js"></script>
+	<script>
+		(function(jQuery, undefined) {
+			jQuery(document).ready(function() {
+				var wrap = jQuery('.slides_wrap'),
+				    slides = wrap.find('.img_slide'),
+				    active = slides.filter('.active'),
+				    buttons = jQuery('.slide_button'),
+				    i = slides.index(active),
+				    width = wrap.width();
+
+				// Listen for swipe events on slides, and use a custom 'activate'
+				// event to add and remove the class 'active' to the previous
+				// or next slide, and to keep the index up-to-date. The class
+				// 'active' uses CSS transitions to make the slide move.
+
+				slides
+
+				.on('swipeleft', function(e) {
+					if (i === slides.length - 1) { return; }
+					slides.eq(i + 1).trigger('activate');
+				})
+
+				.on('swiperight', function(e) {
+					if (i === 0) { return; }
+					slides.eq(i - 1).trigger('activate');
+				})
+
+				.on('activate', function(e) {
+					slides.eq(i).removeClass('active');
+					buttons.eq(i).removeClass('on');
+
+					jQuery(e.target).addClass('active');
+
+					// Update the active slide index
+					i = slides.index(e.target);
+
+					// select active class for slide button
+					buttons.eq(i).addClass('on');
+				})
+
+				// The code below handles what happens before any swipe event is triggered.
+				// It makes the slides demo on this page work nicely, but really doesn't
+				// have much to do with demonstrating the swipe events themselves. For more
+				// on move events see:
+				//
+				// http://stephband.info/jquery.event.move
+
+				.on('movestart', function(e) {
+					// If the movestart heads off in a upwards or downwards
+					// direction, prevent it so that the browser scrolls normally.
+					if ((e.distX > e.distY && e.distX < -e.distY) ||
+					    (e.distX < e.distY && e.distX > -e.distY)) {
+						e.preventDefault();
+						return;
+					}
+
+					// To allow the slide to keep step with the finger,
+					// temporarily disable transitions.
+					wrap.addClass('notransition');
+				})
+
+				.on('move', function(e) {
+					var left = 100 * e.distX / width;
+
+					// Move slides with the finger
+					if (e.distX < 0) {
+						if (slides[i+1]) {
+							slides[i].style.left = left + '%';
+							slides[i+1].style.left = (left+100)+'%';
+						}
+						else {
+							slides[i].style.left = left/4 + '%';
+						}
+					}
+					if (e.distX > 0) {
+						if (slides[i-1]) {
+							slides[i].style.left = left + '%';
+							slides[i-1].style.left = (left-100)+'%';
+						}
+						else {
+							slides[i].style.left = left/5 + '%';
+						}
+					}
+				})
+
+				.on('moveend', function(e) {
+					wrap.removeClass('notransition');
+					
+					slides[i].style.left = '';
+		
+					if (slides[i+1]) {
+						slides[i+1].style.left = '';
+					}
+					if (slides[i-1]) {
+						slides[i-1].style.left = '';
+					}
+				});
+
+				// Make the buttons work, too. Hijack the id stored in the href and use
+				// it to activate the slide.
+
+				jQuery(document)
+				.on('click', '.slide_button', function(e) {
+					var href = e.currentTarget.hash;
+
+					jQuery(href).trigger('activate');
+
+					e.preventDefault();
+				});
+			});
+		})(jQuery);	
+	</script>
+    </body>
+
+</html>
